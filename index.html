@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Should I Go Outside?</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="globe"></div>
+        <h1>Should I Go Outside?</h1>
+      </div>
+      <p class="intro">
+        This website pulls weather data and tells you whether or not it's a good idea to go outside.
+      </p>
+    </header>
+
+    <section class="card" aria-labelledby="app-title">
+      <h2 id="app-title">Enter Your City</h2>
+      <p class="small-text">
+        This app uses Geolocation, Open-Meteo, and localStorage.
+      </p>
+
+      <div class="controls">
+        <button id="location-button" type="button">Use My Location</button>
+
+        <form id="city-form" class="city-form">
+          <label for="city-input">Or search a city</label>
+          <div class="input-row">
+            <input id="city-input" type="text" placeholder="Enter a city">
+            <button id="search-button" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <p id="status-message" class="status-message" role="status">Ready to check the weather.</p>
+    </section>
+
+    <section class="card results" aria-live="polite">
+      <h2>Weather Result</h2>
+
+      <div id="empty-state">
+        <p>Your result will show here after you use your location or search for a city.</p>
+      </div>
+
+      <div id="weather-output" class="hidden">
+        <h3 id="location-name">Location</h3>
+        <p id="recommendation" class="recommendation">Recommendation</p>
+
+        <div class="result-grid">
+          <p><strong>Temperature:</strong> <span id="temperature">--</span></p>
+          <p><strong>Condition:</strong> <span id="condition">--</span></p>
+          <p><strong>Wind:</strong> <span id="wind">--</span></p>
+          <p><strong>Rain Chance:</strong> <span id="rain">--</span></p>
+        </div>
+
+        <p id="reason" class="reason">Explanation goes here.</p>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="card info-card">
+        <h2>Concept</h2>
+        <p>
+          The app solves a small real-life problem: deciding whether now is a good time to step
+          outside for a break. It turns weather data into a simple answer.
+        </p>
+      </article>
+
+      <article class="card info-card">
+        <h2>APIs Used</h2>
+        <ul>
+          <li>Geolocation API for the user&rsquo;s current location</li>
+          <li>Open-Meteo Geocoding API for city search</li>
+          <li>Open-Meteo Forecast API for weather data</li>
+          <li>localStorage to save the last searched city</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
