@@ -130,6 +130,8 @@ async function getWeatherFromCoordinates(latitude, longitude, placeName) {
 
     showWeather(placeName, current.temperature_2m, weatherText, current.wind_speed_10m, rainChance, result);
     setStatus("Weather loaded.");
+} catch(error){
+  setStatus("Weather couldn't load");
 }
 
 //decision logic
@@ -180,4 +182,4 @@ function getWeatherText(code) {
   if (code >= 80 && code <= 82) return "Rain Showers";
   if (code >= 95) return "Thunderstorm";
   return "Unknown";
-}
+}}
