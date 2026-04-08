@@ -134,7 +134,7 @@ button:disabled {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  font-family: "monospace";
+
 }
 
 .info-card ul,
